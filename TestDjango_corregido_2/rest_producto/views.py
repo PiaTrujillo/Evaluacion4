@@ -7,7 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 from core.models import Producto
 from .serializers import ProductoSerializer
 
-
 @csrf_exempt
 @api_view(['GET', 'POST'])
 
