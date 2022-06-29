@@ -9,11 +9,10 @@ from .serializers import ProductoSerializer
 
 @csrf_exempt
 @api_view(['GET', 'POST'])
-
 def lista_productos(request):
     if request.method == 'GET':
-        producto = Producto.objects.all()
-        serializer  = ProductoSerializer(producto, many=True)
+        productos = Producto.objects.all()
+        serializer = ProductoSerializer(productos, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
         data = JSONParser().parse(request)
@@ -22,13 +21,15 @@ def lista_productos(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else: 
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+            return Response(serializer.erros, status=status.HTTP_400_BAD_REQUEST)
+        
+        
+        
         
 @api_view(['GET','PUT','DELETE'])
 def detalle_producto(request, id):
     try:
-        producto = Producto.objects.get(sku=id)
+        producto = producto.objects.get(sku=id)
     except producto.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     if request.method == 'GET':
