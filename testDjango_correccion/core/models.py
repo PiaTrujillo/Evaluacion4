@@ -7,7 +7,7 @@ class Categoria(models.Model):
     idCategoria = models.IntegerField(primary_key=True, verbose_name='Id de categoria')
     nombreCategoria = models.CharField(max_length=50, verbose_name="Nombre categoria")
 
-    def _str_(self):
+    def __str__(self):
         return self.nombreCategoria
 
 #Producto
@@ -19,8 +19,6 @@ class Producto(models.Model):
     descripcion = models.CharField(max_length=100, null=True, blank=True, verbose_name='descripcion')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
-   
 
-
-    def _str_(self):
+    def __str__(self):
         return self.sku

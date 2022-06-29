@@ -27,8 +27,7 @@ def correas(request):
     productos = Producto.objects.all()
     datos = {
         'productos': productos
-    }
-    
+    } 
     return render(request, 'core/correas.html', datos)
 
 def identificadores(request):
@@ -58,10 +57,6 @@ def identificador_producto_1(request):
         'productos': productos
     }
     return render(request, 'core/identificador_producto_1.html', datos)
-
-def registro(request):
-    datos = {}
-    return render(request, 'core/registro.html')
 
 def productos(request):
     productos = Producto.objects.all()
