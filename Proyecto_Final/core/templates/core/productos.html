@@ -96,6 +96,7 @@
                   <th scope="col">Correo</th> <!--Se cambia de Stock a Correo-->
                   <th scope="col">Banco</th>  <!--Se cambia de Categoría a Banco-->
                   <th scope="col">Cuenta</th> <!--Se cambia de Descripción a Cuenta-->
+                  <th scope="col">Blabla</th>
                 </tr>
               </thead>
                 <tbody>
@@ -109,6 +110,7 @@
                     <td>{{prod.descripcion}}</td>
                     <td>{{prod.categoria.nombreCategoria}}</td>
                     <td>{{prod.precio}}</td>
+                    <td>{{prod.stock}}</td>
                     <td><a class="btn btn-primary" href="{% url 'form_mod_producto' prod.sku %}" role="button">Modificar</a></td>
                     <td><a class="btn btn-danger" href="{% url 'form_del_producto' prod.sku %}" role="button">Eliminar</a></td>
                   </tr>
