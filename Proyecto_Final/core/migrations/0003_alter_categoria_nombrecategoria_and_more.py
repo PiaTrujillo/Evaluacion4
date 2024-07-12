@@ -11,6 +11,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
+            model_name='producto',
+            name='sku',
+            field=models.IntegerField(primary_key=True, serialize=False, verbose_name='sku'),
+        ),
+        migrations.AlterField(
             model_name='categoria',
             name='nombreCategoria',
             field=models.CharField(max_length=50, verbose_name='Nombre categoria'),
@@ -29,11 +34,6 @@ class Migration(migrations.Migration):
             model_name='producto',
             name='precio',
             field=models.IntegerField(verbose_name='Precio'),
-        ),
-        migrations.AlterField(
-            model_name='producto',
-            name='sku',
-            field=models.IntegerField(primary_key=True, serialize=False, verbose_name='sku'),
         ),
         migrations.AlterField(
             model_name='producto',
