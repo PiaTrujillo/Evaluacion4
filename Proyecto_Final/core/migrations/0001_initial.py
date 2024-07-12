@@ -15,15 +15,18 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Categoria',
             fields=[
-                ('idCategoria', models.IntegerField(primary_key=True, serialize=False, verbose_name='Id de categoria')),
-                ('nombreCategoria', models.CharField(max_length=50, verbose_name='Nombre de la categoria')),
+                ('idCategoria', models.IntegerField(primary_key=True, serialize=False, verbose_name='Id de banco')), #se modifica verbose
+                ('nombreCategoria', models.CharField(max_length=50, verbose_name='Nombre del banco')), #se modifica verbose
             ],
         ),
         migrations.CreateModel(
             name='Producto',
             fields=[
-                ('sku', models.CharField(max_length=6, primary_key=True, serialize=False, verbose_name='Sku')),
-                ('nombre', models.CharField(max_length=20, verbose_name='Nombre')),
+                ('sku', models.CharField(max_length=8, primary_key=True, serialize=False, verbose_name='RUT')), #se modifica verbose a RUT
+                ('dv', models.CharField(max_length=1, verbose_name='DV')), #se agrega a la lista
+                ('nombre', models.CharField(max_length=50, verbose_name='Nombres')), #se modifica verbose a Nombres
+                ('primer_apellido', models.CharField(max_length=30, verbose_name='Primer Apellido')), #se agrega a la lista
+                ('segundo_apellido', models.CharField(max_length=30, verbose_name='Segundo Apellido')), #se agrega a la lista
                 ('precio', models.CharField(blank=True, max_length=20, null=True, verbose_name='precio')),
                 ('stock', models.CharField(blank=True, max_length=20, null=True, verbose_name='stock')),
                 ('descripcion', models.CharField(blank=True, max_length=20, null=True, verbose_name='descripcion')),

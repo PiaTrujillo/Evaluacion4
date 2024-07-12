@@ -13,22 +13,27 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='producto',
             name='sku',
-            field=models.IntegerField(primary_key=True, serialize=False, verbose_name='sku'),
-        ),
-        migrations.AlterField(
-            model_name='categoria',
-            name='nombreCategoria',
-            field=models.CharField(max_length=50, verbose_name='Nombre categoria'),
+            field=models.IntegerField(primary_key=True, serialize=False, verbose_name='RUT'), #se modifica verbose a RUT
         ),
         migrations.AlterField(
             model_name='producto',
-            name='descripcion',
-            field=models.CharField(blank=True, max_length=100, null=True, verbose_name='descripcion'),
+            name='dv',
+            field=models.IntegerField(primary_key=True, serialize=False, verbose_name='DV'), #se agrega a la lista
         ),
         migrations.AlterField(
             model_name='producto',
             name='nombre',
-            field=models.CharField(max_length=40, verbose_name='nombre'),
+            field=models.CharField(max_length=50, verbose_name='Nombres'), #se modifica verbose a Nombres
+        ),
+        migrations.AlterField(
+            model_name='producto',
+            name='primer_apellido',
+            field=models.CharField(max_length=30, verbose_name='Primer Apellido'), #se agrega a la lista
+        ),
+        migrations.AlterField(
+            model_name='producto',
+            name='segundo_apellido',
+            field=models.CharField(max_length=30, verbose_name='Segundo Apellido'), #se agrega a la lista
         ),
         migrations.AlterField(
             model_name='producto',
@@ -39,5 +44,15 @@ class Migration(migrations.Migration):
             model_name='producto',
             name='stock',
             field=models.IntegerField(verbose_name='Stock'),
+        ),
+        migrations.AlterField(
+            model_name='categoria',
+            name='nombreCategoria',
+            field=models.CharField(max_length=50, verbose_name='Nombre categoria'),
+        ),
+        migrations.AlterField(
+            model_name='producto',
+            name='descripcion',
+            field=models.CharField(blank=True, max_length=100, null=True, verbose_name='descripcion'),
         ),
     ]

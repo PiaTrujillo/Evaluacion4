@@ -91,6 +91,8 @@
                   <th scope="col">RUT</th> <!--Se cambia de SKU a RUT-->
                   <th scope="col">DV</th> <!--Se cambia de Nombre a DV-->
                   <th scope="col">Nombres</th> <!--Se cambia de Precio a Nombres-->
+                  <th scope="col">Primer Apellido</th> <!--Se agrega-->
+                  <th scope="col">Segundo Apellido</th> <!--Se agrega-->
                   <th scope="col">Correo</th> <!--Se cambia de Stock a Correo-->
                   <th scope="col">Banco</th>  <!--Se cambia de Categoría a Banco-->
                   <th scope="col">Cuenta</th> <!--Se cambia de Descripción a Cuenta-->
@@ -100,11 +102,13 @@
                   {% for prod in productos %}
                   <tr>
                     <td>{{prod.sku}}</td>
+                    <td>{{prod.dv}}</td>
                     <td>{{prod.nombre}}</td>
-                    <td>{{prod.precio}}</td>
-                    <td>{{prod.stock}}</td>
-                    <td>{{prod.categoria.nombreCategoria}}</td>
+                    <td>{{prod.primer_apellido}}</td>
+                    <td>{{prod.segundo_apellido}}</td>
                     <td>{{prod.descripcion}}</td>
+                    <td>{{prod.categoria.nombreCategoria}}</td>
+                    <td>{{prod.precio}}</td>
                     <td><a class="btn btn-primary" href="{% url 'form_mod_producto' prod.sku %}" role="button">Modificar</a></td>
                     <td><a class="btn btn-danger" href="{% url 'form_del_producto' prod.sku %}" role="button">Eliminar</a></td>
                   </tr>

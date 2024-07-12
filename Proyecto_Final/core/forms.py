@@ -6,4 +6,4 @@ class ProductoForm(ModelForm):
     
     class Meta:
         model = Producto
-        fields = ['sku', 'nombre', 'precio', 'stock', 'descripcion', 'categoria']
+        fields = ['sku','dv','nombre','primer_apellido','segundo_apellido','descripcion','categoria','precio']

@@ -13,12 +13,14 @@ class Categoria(models.Model):
 #Producto
 class Producto(models.Model):
     sku = models.IntegerField(primary_key=True, verbose_name='sku')
-    nombre = models.CharField(max_length=40, verbose_name='nombre')
+    dv = models.CharField(max_length=1, verbose_name='dv') #se agrega
+    nombre = models.CharField(max_length=40, verbose_name='Nombres') 
+    primer_apellido = models.CharField(max_length=40, verbose_name='Primer Apellido') #se agrega
+    segundo_apellido = models.CharField(max_length=40, verbose_name='Segundo Apellido') #se agrega
     precio = models.IntegerField(verbose_name='Precio')
     stock = models.IntegerField(verbose_name='Stock')
     descripcion = models.CharField(max_length=100, null=True, blank=True, verbose_name='descripcion')
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-
 
     def __str__(self):
         return self.sku
