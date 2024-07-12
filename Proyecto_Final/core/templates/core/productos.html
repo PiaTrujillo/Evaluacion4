@@ -78,7 +78,7 @@
 
   <div class="container-lg" style="background-color: rgba(191, 228, 29, 0.788)">
     <div class="row align-items-center mt-2 p-2">
-        <h1>Listado de Productos</h1>
+        <h2>Prestadores de Servicios</h2>
     </div>
   </div>
 
@@ -93,6 +93,7 @@
                   <th scope="col">Nombres</th> <!--Se cambia de Precio a Nombres-->
                   <th scope="col">Correo</th> <!--Se cambia de Stock a Correo-->
                   <th scope="col">Banco</th>  <!--Se cambia de Categoría a Banco-->
+                  <th scope="col">Descripcion</th>
                 </tr>
               </thead>
                 <tbody>
@@ -103,13 +104,14 @@
                     <td>{{prod.precio}}</td>
                     <td>{{prod.stock}}</td>
                     <td>{{prod.categoria.nombreCategoria}}</td>
-                    <td><a href="{% url 'form_mod_producto' prod.sku %}">Modificar</a></td>
-                    <td><a href="{% url 'form_del_producto' prod.sku %}">Eliminar</a></td>
+                    <td>{{prod.descripcion}}</td>
+                    <td><a class="btn btn-primary" href="{% url 'form_mod_producto' prod.sku %}" role="button">Modificar</a></td>
+                    <td><a class="btn btn-danger" href="{% url 'form_del_producto' prod.sku %}" role="button">Eliminar</a></td>
                   </tr>
                   {% endfor %}
                 </tbody>
             </table>
-            <a href="{% url 'form_producto' %}">Nuevo registro</a>
+            <a class="btn btn-success" href="{% url 'form_producto' %}" role="button">Nuevo registro</a>
         </div>
     </div>
 
